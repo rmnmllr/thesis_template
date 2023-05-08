@@ -93,8 +93,7 @@
 % For pdf
 % \usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=black,pdfpagelayout=TwoPageRight]{hyperref}
 
-% bibliographie
-
+% bibliography
 \usepackage{csquotes}
 \usepackage[
   backend=biber,
@@ -118,16 +117,6 @@
   {\usebibmacro{postnote})}
 
 \usepackage[nottoc]{tocbibind} %Bibliography in toc
-% \usepackage[noadjust]{cite} % 'sort' and 'compress' are enabled by default -> More than two citations are combined with a --
-
-% Change format of backref
-% \renewcommand*{\backref}[1]{}
-% \renewcommand*{\backrefalt}[4]{{%
-%     \ifcase #1 Not cited.%
-%           \or Zitiert auf Seite~#2.%
-%           \else Zitiert auf Seiten #2.%
-%     \fi%
-%     }}
 
 %  makes brackets around equation references
 \makeatletter
@@ -218,15 +207,6 @@
 }
 \makeatother
 
-% appendix tables
-\DeclareFontFamily{\encodingdefault}{\ttdefault}{%
-  \hyphenchar\font=\defaulthyphenchar
-  \fontdimen2\font=0.33333em
-  \fontdimen3\font=0.16667em
-  \fontdimen4\font=0.11111em
-  \fontdimen7\font=0.11111em
-}
-
 \begin{document}
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
@@ -270,7 +250,7 @@
 \fancyhf{}
 \fancyhead[LE]{\thepage}
 \fancyhead[RE]{\chaptername~\thechapter: \leftmark}
-\fancyhead[LO]{Abschnitt~\thesection:~\nouppercase{\rightmark}}
+\fancyhead[LO]{Section~\thesection:~\nouppercase{\rightmark}}
 \fancyhead[RO]{\thepage}
 
 \input{chapters/chapter_xx}
@@ -284,37 +264,37 @@
 % Bibliography
 \fancyhf{}
 \fancyhead[LE]{\thepage}
-\fancyhead[RE]{Literaturverzeichnis}
-\fancyhead[LO]{Literaturverzeichnis}
+\fancyhead[RE]{Biblography}
+\fancyhead[LO]{Biblography}
 \fancyhead[RO]{\thepage}
 
 \printbibliography[
     heading=bibintoc,
-    title=Literaturverzeichnis
+    title=Biblography
 ]
 
 \fancyhf{}
 \fancyhead[LE]{\thepage}
-\fancyhead[RE]{Abbildungsverzeichnis}
-\fancyhead[LO]{Abbildungsverzeichnis}
+\fancyhead[RE]{List of Figures}
+\fancyhead[LO]{List of Figures}
 \fancyhead[RO]{\thepage}
 \listoffigures
 \cleardoublepage
 
 \fancyhf{}
 \fancyhead[LE]{\thepage}
-\fancyhead[RE]{Tabellenverzeichnis}
-\fancyhead[LO]{Tabellenverzeichnis}
+\fancyhead[RE]{List of Tables}
+\fancyhead[LO]{List of Tables}
 \fancyhead[RO]{\thepage}
 \listoftables
 \cleardoublepage
 
 \fancyhf{}
 \fancyhead[LE]{\thepage}
-\fancyhead[RE]{Selbst\"andigkeitserkl\"aerung}
-\fancyhead[LO]{Selbst\"andigkeitserkl\"aerung}
+\fancyhead[RE]{Declaration}
+\fancyhead[LO]{Declaration}
 \fancyhead[RO]{\thepage}
-\begin{figure}\addcontentsline{toc}{chapter}{Selbst\"andigkeitserkl\"aerung}\markboth{Selbst\"andigkeitserkl\"aerung}{Selbst\"andigkeitserkl\"aerung}
+\begin{figure}\addcontentsline{toc}{chapter}{Declaration}\markboth{Declaration}{Declaration}
 	\centering
 	\includegraphics[page=1,height=\textheight]{others/declaration.pdf}
 \end{figure}
@@ -325,11 +305,10 @@
 \fancyhf{}
 \fancyhead[LE]{\thepage}
 \fancyhead[RE]{\chaptername~\thechapter: \leftmark}
-\fancyhead[LO]{Abschnitt~\thesection:~\nouppercase{\rightmark}}
+\fancyhead[LO]{Section~\thesection:~\nouppercase{\rightmark}}
 \fancyhead[RO]{\thepage}
 
 \input{chapters/appendix}
 \cleardoublepage
 
 \end{document}
-
